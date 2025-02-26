@@ -190,7 +190,7 @@ while True:
         x += klbnspeed
         klbn.setx(x)
 
-        # Check if any enemy touches the wall
+        # pader
         if x > 280 or x < -280:
             wall_ht = True
 
@@ -200,14 +200,14 @@ while True:
             y -= 40
             klbn.sety(y)
 
-            # Check if enemy reaches bottom
+            # baba gameover
             if y < -250:
                 game_over()
                 break
 
         klbnspeed *= -1
 
-    # Check for bullet collision
+    
     for klbn in klbns:
         if isCollision(bullet, klbn):
             winsound.PlaySound("boom7.wav", winsound.SND_ASYNC)
@@ -233,7 +233,7 @@ while True:
             break
             winsound.PlaySound("win.wav", winsound.SND_ASYNC)
 
-    # Move bullet
+    
     if bulletstate == "fire":
         y = bullet.ycor()
         y += bulletspeed
